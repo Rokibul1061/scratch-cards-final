@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VIP Card</title>
+  <style>
+    #scratch {
+      width: 300px;
+      height: 100px;
+      background: gold;
+      position: relative;
+      color: black;
+      font-size: 24px;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="scratch">
+    👑 VIP পুরষ্কার: ১০০ টাকা!
+    <canvas width="300" height="100"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#666";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    canvas.addEventListener("mousemove", (e) => {
+      if (e.buttons === 1) {
+        const x = e.offsetX;
+        const y = e.offsetY;
+        ctx.clearRect(x - 10, y - 10, 20, 20);
+      }
+    });
+  </script>
+</body>
+</html>
