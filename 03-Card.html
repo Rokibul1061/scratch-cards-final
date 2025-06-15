@@ -70,10 +70,7 @@
 
   <script>
     const brushRadius = 20;
-    const today = new Date().toISOString().split('T')[0];
-    const localStorageKey = "scratch_date_3cards";
 
-    const hasScratchedToday = localStorage.getItem(localStorageKey) === today;
     const alreadyMessage = document.getElementById("alreadyScratchedMessage");
 
     if (hasScratchedToday) {
