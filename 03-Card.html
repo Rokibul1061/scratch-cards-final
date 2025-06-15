@@ -49,9 +49,6 @@
 <body>
   <h1>🎉 আজকের ৩টি স্ক্র্যাচ কার্ড ব্যবহার করুন! 🎁</h1>
 
-  <div id="alreadyScratchedMessage" class="overlay-message" style="display: none;">
-    আপনি আজকে ইতোমধ্যেই স্ক্র্যাচ করেছেন। দয়া করে আগামীকাল আবার চেষ্টা করুন!
-  </div>
 
   <div class="scratch-container scratch-card">
     <div class="reward">আপনি জিতেছেন ৳5!</div>
@@ -71,12 +68,6 @@
   <script>
     const brushRadius = 20;
 
-    const alreadyMessage = document.getElementById("alreadyScratchedMessage");
-
-    if (hasScratchedToday) {
-      document.querySelectorAll(".scratch-card").forEach(card => card.style.display = "none");
-      alreadyMessage.style.display = "block";
-    } else {
       document.querySelectorAll(".scratch-container").forEach(container => {
         const canvas = container.querySelector("canvas");
         const ctx = canvas.getContext("2d");
@@ -129,8 +120,6 @@
         ctx.fillRect(0, 0, canvas.width, canvas.height);
       });
 
-      localStorage.setItem(localStorageKey, today);
-    }
   </script>
 </body>
 </html>
